@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Mail</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+  <body>
+    <div class="contact_form">
+      <h3 class="contact_form__title">Send Mail</h3>
+      <form method="POST" action="/sendemail">
+        <div class="contact_form__inputGroup">
+          <label>Name</label>
+          <input type="text" name="name"
+            placeholder="Enter Name" />
+        </div>
+        <div class="contact_form__inputGroup">
+            <label>Status</label>
+            <input
+              type="text"
+              name="Status"
+              placeholder="Enter PASS/FAIL"
+            />
+          </div>
+          
+        <div class="contact_form__inputGroup">
+          <label>Email</label>
+          <input
+            type="Text"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="contact_form__inputGroup">
+            <label>BCC</label>
+            <input
+              type="text"
+              name="BCC"
+              placeholder="Enter multiple mails with space"
+            />
+          </div>
+        <button class="contact_form__submitBtn" type="submit">Send</button>
+      </form>
+    </div>
+  </body>
+</html>
