@@ -1,7 +1,7 @@
 const sgMail = require("@sendgrid/mail");
 const { code } = require("statuses");
 
-sgMail.setApiKey('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')
+sgMail.setApiKey('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')
 
 var count =0;
 var delivered=0;
