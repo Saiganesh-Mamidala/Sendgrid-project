@@ -18,30 +18,30 @@ app.get("/sent", (req, res) => {
   });
   app.post("/sendemail", (req, res) => {
     const { name, Status, email, BCC } = req.body;
-  var a= req.body.email; 
-  var str= req.body.BCC;
-  var Emails=[ ];
-  Emails= str.split(" ");
-  let unique=[...new Set(Emails)];
-  unique.unshift(a);
-  uniqueEmails=unique;
-  var allmails= [];
+    var a= req.body.email; 
+    var str= req.body.BCC;
+    var Emails=[ ];
+    Emails= str.split(" ");
+    let unique=[...new Set(Emails)];
+    unique.unshift(a);
+    uniqueEmails=unique;
+    var allmails= [];
 
-  allmails=uniqueEmails
+    allmails=uniqueEmails
 
-  var validmailcount=0;
-  var validmails =[];
-  var invalidmailcount=0;
-  var invalidmails=[];
-  for(i=0;i<allmails.length;i++){
-    if(emailvalidator.validate(allmails[i])){
-      validmailcount=validmailcount+1;
-      validmails.push(allmails[i]);
-      
-    }else{
-        invalidmailcount=invalidmailcount+1;
-        invalidmails.push(allmails[i]);   
-  }
+    var validmailcount=0;
+    var validmails =[];
+    var invalidmailcount=0;
+    var invalidmails=[];
+    for(i=0;i<allmails.length;i++){
+        if(emailvalidator.validate(allmails[i])){
+        validmailcount=validmailcount+1;
+        validmails.push(allmails[i]);
+        
+        }else{
+            invalidmailcount=invalidmailcount+1;
+            invalidmails.push(allmails[i]);   
+    }
 }
   console.log("validmails="+validmailcount);
   console.log("invalidmails="+invalidmailcount);
@@ -52,7 +52,7 @@ app.get("/sent", (req, res) => {
   res.render("sent",{validmailcount,invalidmailcount,validmails,invalidmails});
  // res.render("sent",{invalidmailcount});
   
-  const from='saiganesh.mamidala12@gmail.com';
+  const from='saiganesh.171mn019@nitk.edu.in';
   const to =a;
 
 
@@ -76,7 +76,7 @@ app.get("/sent", (req, res) => {
 
   
   
-     const from='saiganesh.mamidala12@gmail.com';
+     const from='saiganesh.171mn019@nitk.edu.in';
      const to =uniqueEmails[i];
   
 
@@ -98,5 +98,5 @@ app.get("/sent", (req, res) => {
    
 });
 
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 9024 ;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
